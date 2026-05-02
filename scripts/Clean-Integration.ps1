@@ -24,7 +24,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $projectDir = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$projectFile = Join-Path $projectDir 'KF.Nuget.Integration.Tests.csproj'
+$projectFile = Join-Path $projectDir 'KoreForge.Nuget.Integration.Tests.csproj'
 
 Write-Host ""
 Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
@@ -61,7 +61,7 @@ if ($ClearGlobalCache) {
     $nugetCache = Join-Path $env:USERPROFILE '.nuget\packages'
     $packagesToRemove = @(
         'koreforge.applifecycle',
-        'kf.kafka',
+        'KoreForge.kafka',
         'koreforge.logging',
         'koreforge.logging.serilog',
         'koreforge.metrics',

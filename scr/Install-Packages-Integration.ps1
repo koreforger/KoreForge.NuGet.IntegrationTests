@@ -29,7 +29,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $projectDir = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$projectFile = Join-Path $projectDir 'KF.Nuget.Integration.Tests.csproj'
+$projectFile = Join-Path $projectDir 'KoreForge.Nuget.Integration.Tests.csproj'
 
 Write-Host ""
 Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
@@ -45,7 +45,7 @@ if (-not (Test-Path $projectFile)) {
 # Define all packages to install
 $packages = @(
     @{ Name = 'KoreForge.AppLifecycle'; Source = 'KoreForge.AppLifecycle' },
-    @{ Name = 'KF.Kafka'; Source = 'KF.Kafka' },
+    @{ Name = 'KoreForge.Kafka'; Source = 'KoreForge.Kafka' },
     @{ Name = 'KoreForge.Logging'; Source = 'KoreForge.Logging' },
     @{ Name = 'KoreForge.Logging.Serilog'; Source = 'KoreForge.Logging.Serilog' },
     @{ Name = 'KoreForge.Metrics'; Source = 'KoreForge.Metrics' },

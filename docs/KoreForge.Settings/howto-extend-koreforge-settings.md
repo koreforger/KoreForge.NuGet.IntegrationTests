@@ -43,7 +43,7 @@ This guide is for contributors enhancing the libraries or CLI in this repository
 
 - **Public API surface** lives in the abstractions project. Breaking changes require a MAJOR version bump; consult `docs/versioning-guide.md`.
 - **DI-friendly services** – keep constructors minimal and favor interfaces for dependencies.
-- **Options-driven behavior** – prefer extending `KFSettingsOptions` to adding new global statics.
+- **Options-driven behavior** – prefer extending `KoreForgeSettingsOptions` to adding new global statics.
 - **Background services** – hook into `SettingsReloadBackgroundService` rather than starting additional hosted services whenever possible.
 - **CLI parity** – any feature you add to the provider should have equivalent support in the CLI when it affects administrators.
 

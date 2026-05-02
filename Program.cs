@@ -10,37 +10,37 @@ using KoreForge.AppLifecycle.Options;
 using KoreForge.AppLifecycle.Flows;
 
 // Kafka
-using KF.Kafka.Configuration.Extensions;
-using KF.Kafka.Configuration.Options;
-using KF.Kafka.Consumer.Hosting;
-using KF.Kafka.Producer.Abstractions;
-using KF.Kafka.AdminClient.Abstractions;
-using KF.Kafka.Core.Alerts;
+using KoreForge.Kafka.Configuration.Extensions;
+using KoreForge.Kafka.Configuration.Options;
+using KoreForge.Kafka.Consumer.Hosting;
+using KoreForge.Kafka.Producer.Abstractions;
+using KoreForge.Kafka.AdminClient.Abstractions;
+using KoreForge.Kafka.Core.Alerts;
 
 // Logging
-using KF.Logging;
-using KF.Logging.Serilog;
+using KoreForge.Logging;
+using KoreForge.Logging.Serilog;
 
 // Metrics
-using KF.Metrics;
-using KF.Metrics.AspNet;
+using KoreForge.Metrics;
+using KoreForge.Metrics.AspNet;
 
 // Time
-using KF.Time;
+using KoreForge.Time;
 
 // Web.Authorization
-using KF.Web.Authorization.Core;
-using KF.Web.Authorization.Core.Mvc;
-using KF.Web.Authorization.Dynamic;
+using KoreForge.Web.Authorization.Core;
+using KoreForge.Web.Authorization.Core.Mvc;
+using KoreForge.Web.Authorization.Dynamic;
 
 // RestApi (Common packages)
-using KF.RestApi.Common.Abstractions.Options;
-using KF.RestApi.Common.Abstractions.DependencyInjection;
-using KF.RestApi.Common.Observability.Tracing;
-using KF.RestApi.Common.Observability.DependencyInjection;
-using KF.RestApi.Common.Persistence;
-using KF.RestApi.Common.Persistence.DependencyInjection;
-using KF.RestApi.Common.Persistence.Repositories;
+using KoreForge.RestApi.Common.Abstractions.Options;
+using KoreForge.RestApi.Common.Abstractions.DependencyInjection;
+using KoreForge.RestApi.Common.Observability.Tracing;
+using KoreForge.RestApi.Common.Observability.DependencyInjection;
+using KoreForge.RestApi.Common.Persistence;
+using KoreForge.RestApi.Common.Persistence.DependencyInjection;
+using KoreForge.RestApi.Common.Persistence.Repositories;
 
 Console.WriteLine("╔════════════════════════════════════════════════════════════════╗");
 Console.WriteLine("║       KoreForge NuGet Package Integration Test                 ║");
@@ -50,7 +50,7 @@ Console.WriteLine("All packages loaded successfully!");
 Console.WriteLine();
 Console.WriteLine("Installed Packages:");
 Console.WriteLine("  • KoreForge.AppLifecycle");
-Console.WriteLine("  • KF.Kafka");
+Console.WriteLine("  • KoreForge.Kafka");
 Console.WriteLine("  • KoreForge.Logging");
 Console.WriteLine("  • KoreForge.Logging.Serilog");
 Console.WriteLine("  • KoreForge.Metrics");

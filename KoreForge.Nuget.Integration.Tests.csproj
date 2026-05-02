@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- Allow package downgrades for integration testing of all local packages -->
+    <NoWarn>$(NoWarn);NU1605;NU1903</NoWarn>
+    <!-- Set SolutionDir for packages that expect it -->
+    <SolutionDir Condition="'$(SolutionDir)' == '' or '$(SolutionDir)' == '*Undefined*'">$(MSBuildProjectDirectory)\</SolutionDir>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="KoreForge.AppLifecycle" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Kafka" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Logging" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Logging.Serilog" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Metrics" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Metrics.AspNet" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Time" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Web.Authorization" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Web.RestApi.Abstractions" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Web.RestApi.Observability" Version="1.0.1-alpha" />
+    <PackageReference Include="KoreForge.Web.RestApi.Persistence" Version="1.0.1-alpha" />
+  </ItemGroup>
+</Project>

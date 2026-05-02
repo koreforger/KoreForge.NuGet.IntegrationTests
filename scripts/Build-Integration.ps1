@@ -35,7 +35,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $projectDir = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$projectFile = Join-Path $projectDir 'KF.Nuget.Integration.Tests.csproj'
+$projectFile = Join-Path $projectDir 'KoreForge.Nuget.Integration.Tests.csproj'
 
 Write-Host ""
 Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan

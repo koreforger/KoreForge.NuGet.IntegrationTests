@@ -29,14 +29,14 @@ This guide is for developers integrating the KoreForge Settings libraries or CLI
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddKFSettings(opts =>
+builder.Configuration.AddKoreForgeSettings(opts =>
 {
     opts.ConnectionString = builder.Configuration.GetConnectionString("KoreForgeSettings");
     opts.EnableDecryption = false;
     opts.EnableMetrics = true;
 });
 
-builder.Services.AddKFSettingsServices(builder.Configuration);
+builder.Services.AddKoreForgeSettingsServices(builder.Configuration);
 ```
 
 > The provider automatically resolves the connection string using `KoreForge:Settings:ConnectionString`, `ConnectionStrings:KoreForgeSettings`, or the `KOREFORGE_SETTINGS_CONNECTIONSTRING` environment variable, so you only need to set it if the defaults do not apply.
@@ -55,7 +55,7 @@ koreforge-settings set --app Sample --key FeatureFlag --value true
 
 ## Best practices
 
-- **Centralize options** – keep the `KFSettingsOptions` initialization in one place (usually `Program.cs`) so connection strings and feature flags stay consistent between the host and CLI.
+- **Centralize options** – keep the `KoreForgeSettingsOptions` initialization in one place (usually `Program.cs`) so connection strings and feature flags stay consistent between the host and CLI.
 - **Enable metrics intentionally** – leave `EnableMetrics` off unless you have a collector reading the in-memory recorder or plan to swap in a custom `IMetricsRecorder`.
 - **Encrypt sensitive values** – register a custom `IEncryptionProvider` and set `EnableDecryption=true` before storing secrets. Default `NoOpEncryptionProvider` leaves content in plain text.
 - **Watch row versions** – the provider enforces optimistic concurrency; handle `ConcurrencyConflictException` in your calling code if you manipulate settings directly.
@@ -66,9 +66,9 @@ koreforge-settings set --app Sample --key FeatureFlag --value true
 | Pitfall | How to avoid it |
 | --- | --- |
 | Missing connection string | Either set `opts.ConnectionString`, add `ConnectionStrings:KoreForgeSettings`, or export `KOREFORGE_SETTINGS_CONNECTIONSTRING`. The service registration throws if nothing resolves.
-| `EnableDecryption=true` without a provider | Register an `IEncryptionProvider` implementation before calling `AddKFSettingsServices` or leave encryption disabled.
+| `EnableDecryption=true` without a provider | Register an `IEncryptionProvider` implementation before calling `AddKoreForgeSettingsServices` or leave encryption disabled.
 | Running migrations manually | The data layer handles EF Core migrations internally. Use the CLI or application bootstrapper; do not apply schema changes outside coordinated releases.
-| Multiple configuration builders | Always call `AddKFSettings` on the same `ConfigurationManager` instance you pass into `AddKFSettingsServices`. Copying configuration objects loses the options tuple stored in `builder.Properties`.
+| Multiple configuration builders | Always call `AddKoreForgeSettings` on the same `ConfigurationManager` instance you pass into `AddKoreForgeSettingsServices`. Copying configuration objects loses the options tuple stored in `builder.Properties`.
 | Divergent package versions | Do not mix versions from different tags. Use `dotnet list package --outdated` to confirm everything shares the same SemVer.
 
 ## Next steps
